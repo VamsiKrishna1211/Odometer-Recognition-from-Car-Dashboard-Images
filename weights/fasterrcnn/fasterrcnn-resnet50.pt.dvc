@@ -1,0 +1,5 @@
+outs:
+- md5: a8f073c68bc0d14cf5e082a7df8b8bdf
+  size: 173429034
+  hash: md5
+  path: fasterrcnn-resnet50.pt

@@ -3,10 +3,11 @@ save_images
 tb_logs/fasterrcnn
 tb_logs/trocr
 tb_logs/trocr_v2
-weights
+# weights
 test_images
 submission
 
+**/*.zip
 output.*
 Inference.ipynb
 **/*.ckpt
