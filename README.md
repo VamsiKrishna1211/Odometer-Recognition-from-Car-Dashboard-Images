@@ -12,6 +12,14 @@
         - [Weights](#weights)
         - [Dataset](#dataset)
     - [Running the code for Inference](#running-the-code-for-inference)
+- [Environment Setup (Docker)](#environment-setup-docker)
+    - [Weights, Dataset setup.](#weights-dataset-setup-1)
+        - [Weights](#weights-1)
+        - [Dataset](#dataset-1)
+    - [Docker Setup](#docker-setup)
+    - [Docker Image Setup](#docker-image-setup)
+    - [Docker Container Setup](#docker-container-setup)
+    - [Running the code for Inference](#running-the-code-for-inference-1)
 
 ## Introduction
 ### Hardware & Software Used:
@@ -312,6 +320,8 @@ sudo docker images
 sudo docker run --rm -it --gpus all -v <absolute-path-to-dataset>:/clearquote/dataset -v <absolute-path-to-weights>:/clearquote/weights clearquote:latest bash
 ```
 > - The above command will run the docker image and will open a bash shell inside the docker container. <br>
+
+## Running the code for Inference
 - Run the inference code using the following command:
 ```bash
 python test_predict.py --dataset-path dataset/test --image-extensions=".jpg,.png" --odometer-detector-weights weights/fasterrcnn/fasterrcnn-resnet50.pt --ocr-weights weights/trocr_base_v2 --output-path output.csv --save-images --save-images-path=save_images --device cuda
