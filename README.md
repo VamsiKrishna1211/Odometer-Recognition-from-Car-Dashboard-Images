@@ -171,14 +171,14 @@ The model training part is divided into two parts primarily:
 - The model is trained for 40 epochs in total.
 - The model is trained on a batch size of 8.
 - Final combined Loss (box_reg, classifier, objectness, rpn_box_reg) value: `0.106`
-- Weights link: [Google Drive](https://drive.google.com/file/d/1-8Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z/view?usp=sharing)
+- Weights link: [Google Drive](https://drive.google.com/file/d/1f56K0_etroH6bY5bwGfseDLFBahGTHxI/view?usp=drive_link)
 
 ### OCR Model
 - The model is trained for 100 epochs in total.
 - The model is trained on a batch size of 16.
 - Final Loss value: `0.1176`
 - Final CER (Character Error Rate) value: `0.0544`
-- Weights link: [Google Drive](https://drive.google.com/file/d/1-8Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z/view?usp=sharing)
+- Weights link: [Google Drive](https://drive.google.com/file/d/1Dwiiz-qS_bvMuLWXozs8DQQz4snN11OJ/view?usp=drive_link)
 
 ## Environment Setup (Linux or Windows)
 > Note: The following steps are for setting the environment for inference only. <br>
@@ -201,7 +201,7 @@ The model training part is divided into two parts primarily:
 ### Weights
 - Download the weights from the links provided above.
     - **FasterRCNN** Model weights setup:
-    > - Download the zip file from the following link: [Google Drive](https://drive.google.com/file/d/1-8Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z/view?usp=sharing) <br>
+    > - Download the zip file from the following link: [Google Drive](https://drive.google.com/file/d/1f56K0_etroH6bY5bwGfseDLFBahGTHxI/view?usp=drive_link) <br>
     > - Extract the zip file in the root directory of the project. <br>
     > - The extraction will create a file named `fasterrcnn-resnet50.pt` in the root directory of the project. <br>
     > - Create a folder named `weights/fasterrcnn` in the root directory of the project. <br>
@@ -212,7 +212,7 @@ The model training part is divided into two parts primarily:
     > ├── fasterrcnn
     >     └── fasterrcnn-resnet50.pt
     - **TrOCR** Model weights setup:
-    > - Download the zip file from the following link: [Google Drive](https://drive.google.com/file/d/1-8Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z/view?usp=sharing) <br>
+    > - Download the zip file from the following link: [Google Drive](https://drive.google.com/file/d/1Dwiiz-qS_bvMuLWXozs8DQQz4snN11OJ/view?usp=drive_link) <br>
     > - Extract the zip file in the root directory of the project. <br>
     > - The extraction will create a folder named `trocr_base_v2` in the root directory of the project. <br>
     > Copy the folder `trocr_base_v2` to the `weights/` folder. <br>
@@ -257,7 +257,7 @@ python test_predict.py --dataset-path dataset/test --image-extensions=".jpg,.png
 ### Weights
 - Download the weights from the links provided above.
     - **FasterRCNN** Model weights setup:
-    > - Download the zip file from the following link: [Google Drive](https://drive.google.com/file/d/1-8Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z/view?usp=sharing) <br>
+    > - Download the zip file from the following link: [Google Drive](https://drive.google.com/file/d/1f56K0_etroH6bY5bwGfseDLFBahGTHxI/view?usp=drive_link) <br>
     > - Extract the zip file in the root directory of the project. <br>
     > - The extraction will create a file named `fasterrcnn-resnet50.pt` in the root directory of the project. <br>
     > - Create a folder named `weights/fasterrcnn` in the root directory of the project. <br>
@@ -268,7 +268,7 @@ python test_predict.py --dataset-path dataset/test --image-extensions=".jpg,.png
     > ├── fasterrcnn
     >     └── fasterrcnn-resnet50.pt
     - **TrOCR** Model weights setup:
-    > - Download the zip file from the following link: [Google Drive](https://drive.google.com/file/d/1-8Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z/view?usp=sharing) <br>
+    > - Download the zip file from the following link: [Google Drive](https://drive.google.com/file/d/1Dwiiz-qS_bvMuLWXozs8DQQz4snN11OJ/view?usp=drive_link) <br>
     > - Extract the zip file in the root directory of the project. <br>
     > - The extraction will create a folder named `trocr_base_v2` in the root directory of the project. <br>
     > Copy the folder `trocr_base_v2` to the `weights/` folder. <br>
