@@ -409,7 +409,7 @@ if __name__ == "__main__":
     parser.add_argument("--device", type=str, choices=["cuda", "cpu"], help="Device to use for inference")
     parser.add_argument("--log-level", type=str, default="INFO", choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"], help="Log level")
     parser.add_argument("--save-images", action="store_true", help="Save images with bounding boxes and text")
-    parser.add_argument("--save-images-path", type=str, default="output", help="Path to save images with bounding boxes and tex (if save-images is True) NOTE: This path should exist")
+    parser.add_argument("--save-images-path", type=str, default="save_images", help="Path to save images with bounding boxes and tex (if save-images is True) NOTE: This path should exist")
     args = parser.parse_args()
 
     # Validating the arguments

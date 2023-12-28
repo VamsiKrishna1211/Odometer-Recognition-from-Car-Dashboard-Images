@@ -1,4 +1,17 @@
 # Odometer Recognition from Car Dashboard Images (ClearQuote Assessment | Exercise - 2)
+## Contents
+- [Introduction](#introduction)
+- [Data Preprocessing](#data-preprocessing)
+- [Model Training](#model-training)
+- [Model Testing](#model-testing)
+- [Final Inference](#final-inference)
+- [Results](#results)
+- [Environment Setup (Linux or Windows)](#environment-setup-linux-or-windows)
+    - [Python Environment Setup](#python-environment-setup)
+    - [Weights, Dataset setup.](#weights-dataset-setup)
+        - [Weights](#weights)
+        - [Dataset](#dataset)
+    - [Running the code for Inference](#running-the-code-for-inference)
 
 ## Introduction
 ### Hardware & Software Used:
