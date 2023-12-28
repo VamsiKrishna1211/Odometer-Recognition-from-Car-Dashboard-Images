@@ -97,6 +97,7 @@ The model training part is divided into two parts primarily:
     - The Region Proposal Network (RPN)
     - The Region of Interest (RoI) Pooling
 - The model is trained on different learning rates for different parts of the model and used SGD as the optimizer and OneCycleLR as the learning rate scheduler.
+- Refer to the image [here](assets/example_learning_rate.png) for a sample OneCycleLR learning rate scheduler.
 - Initially the model is trained for 20 Epochs, then the best model is saved and then the model is trained for another 20 epochs with lower learning rates than the previous one.
 - The model is trained on a batch size of 8.
 #### Training Results
@@ -121,6 +122,7 @@ The model training part is divided into two parts primarily:
     - The Decoder
         - The Decoder is a RoBERTa Transformer Decoder.
 - The model is trained on different learning rates for different parts of the model and used SGD as the optimizer and OneCycleLR as the learning rate scheduler.
+- Refer to the image [here](assets/example_learning_rate.png) for a sample OneCycleLR learning rate scheduler.
 - The model is trained on a batch size of 16.
 - The model is trained for 100 epochs.
 #### Training Results
@@ -161,4 +163,6 @@ The model training part is divided into two parts primarily:
 ### Using Conda
 - Create a new conda environment using the command `conda create --name <env_name> python=3.9.18`
 - Activate the environment using the command `conda activate <env_name>`
-- Install the required packages using the command `pip install -r requirements.txt`
+- Install the required packages using the command `pip install -r requirements/requirements.txt`
+> if you are using only CPU, then install the `requirements/requirements-cpu.txt` file instead of `requirements/requirements.txt`
+> If you're using a windows system and do not have Visual Studio installed, then install the `requirements/requirements-bkup.txt` file instead of `requirements/requirements.txt`
