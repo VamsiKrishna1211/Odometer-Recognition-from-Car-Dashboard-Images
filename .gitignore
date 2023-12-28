@@ -1,3 +1,11 @@
 dataset
-tb_logs
+save_images
+tb_logs/fasterrcnn
+tb_logs/trocr
+tb_logs/trocr_v2
 weights
+test_images
+
+output.*
+Inference.ipynb
+**/*.ckpt

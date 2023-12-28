@@ -1,0 +1,9 @@
+batch_size: 32
+hf_model_name: microsoft/trocr-small-printed
+learning_rates:
+  decoder: 0.0001
+  encoder: 0.001
+  encoder.encoder.pooler: 0.001
+  output_projection: 0.0001
+max_length: 10
+model_precision: bf16-mixed
