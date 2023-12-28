@@ -5,6 +5,7 @@ tb_logs/trocr
 tb_logs/trocr_v2
 weights
 test_images
+submission
 
 output.*
 Inference.ipynb

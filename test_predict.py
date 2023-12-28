@@ -71,7 +71,7 @@ class FasterRCNNModel(object):
                 weights = self.weights
         
         if isinstance(weights, str) or isinstance(weights, Path):
-            state_dict = torch.load(weights)
+            state_dict = torch.load(weights, map_location=self.device)
         else:
             state_dict = weights
 
@@ -179,7 +179,7 @@ class TrOCRModel(object):
         processor = TrOCRProcessor.from_pretrained(self.hf_model_name)
         logger.debug("Model Weights type: {}".format(model.dtype))
 
-        model = torch.compile(model)
+        model = torch.compile(model, backend="openxla_eval")
         # model.half()
         model.eval()
 
@@ -436,7 +436,7 @@ if __name__ == "__main__":
         if args.device == "cuda" and not torch.cuda.is_available():
             raise Exception("CUDA is not available")
         elif args.device == "cpu":
-            warnings.warn("Using CPU, this will be slow")
+            logger.warning("Using CPU, this will be slow")
     
     if Path(args.output_path).suffix == ".csv":
         logger.info("Using CSV as output format")
