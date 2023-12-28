@@ -230,6 +230,22 @@ The model training part is divided into two parts primarily:
     >     ├── tokenizer_config.json
     >     ├── tokenizer.json
     >     ├── vocab.json
+- Final Weights Folder Structure:
+```bash
+weights
+├── fasterrcnn
+│   └── fasterrcnn-resnet50.pt
+└── trocr_base_v2
+    ├── config.json
+    ├── generation_config.json
+    ├── merges.txt
+    ├── model.safetensors
+    ├── preprocessor_config.json
+    ├── special_tokens_map.json
+    ├── tokenizer_config.json
+    ├── tokenizer.json
+    ├── vocab.json
+```
 
 ### Dataset
 - The dataset can be downloaded or setup any way you want. There are no restrictions on the dataset folder structure.
