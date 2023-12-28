@@ -1,4 +1,5 @@
 # Odometer Recognition from Car Dashboard Images (ClearQuote Assessment | Exercise - 2)
+> **Note:** The code and instructions have been tested only on Linux. <br>
 ## Contents
 - [Introduction](#introduction)
 - [Data Preprocessing](#data-preprocessing)
@@ -6,7 +7,7 @@
 - [Model Testing](#model-testing)
 - [Final Inference](#final-inference)
 - [Results](#results)
-- [Environment Setup (Linux or Windows)](#environment-setup-linux-or-windows)
+- [Environment Setup (Linux)](#environment-setup-linux)
     - [Python Environment Setup](#python-environment-setup)
     - [Weights, Dataset setup.](#weights-dataset-setup)
         - [Weights](#weights)
@@ -180,7 +181,7 @@ The model training part is divided into two parts primarily:
 - Final CER (Character Error Rate) value: `0.0544`
 - Weights link: [Google Drive](https://drive.google.com/file/d/1Dwiiz-qS_bvMuLWXozs8DQQz4snN11OJ/view?usp=drive_link)
 
-## Environment Setup (Linux or Windows)
+## Environment Setup (Linux)
 > Note: The following steps are for setting the environment for inference only. <br>
 ## Python Environment Setup
 ### Using Conda (Recommended)
@@ -285,7 +286,22 @@ python test_predict.py --dataset-path dataset/test --image-extensions=".jpg,.png
     >     ├── tokenizer_config.json
     >     ├── tokenizer.json
     >     ├── vocab.json
-
+- Final Weights Folder Structure:
+```bash
+weights
+├── fasterrcnn
+│   └── fasterrcnn-resnet50.pt
+└── trocr_base_v2
+    ├── config.json
+    ├── generation_config.json
+    ├── merges.txt
+    ├── model.safetensors
+    ├── preprocessor_config.json
+    ├── special_tokens_map.json
+    ├── tokenizer_config.json
+    ├── tokenizer.json
+    ├── vocab.json
+```
 ### Dataset
 - The dataset can be downloaded or setup any way you want. There are no restrictions on the dataset folder structure.
 

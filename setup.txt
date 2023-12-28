@@ -1,6 +1,7 @@
 Github Repository Link: [Github](https://github.com/VamsiKrishna1211/Odometer-Recognition-from-Car-Dashboard-Images?tab=readme-ov-file)
 
-Environment Setup (Linux or Windows)
+Environment Setup (Linux)
+- Windows Not Recommended
 Python Environment Setup
 Using Conda (Recommended)
 1. Create a new conda environment using the command:
@@ -22,13 +23,13 @@ Weights
   - Extract the zip file in the root directory of the project.
   - Create a folder named `weights/fasterrcnn` in the root directory of the project.
   - Place the downloaded weights (`fasterrcnn-resnet50.pt`) file in the `weights/fasterrcnn` folder.
-(Refer to the Github repository for detailed information and folder structure)
+(Refer to the Github repository link above for detailed information and folder structure)
 
 - TrOCR Model weights setup:
   - Download the zip file from the following link: [Google Drive](https://drive.google.com/file/d/1Dwiiz-qS_bvMuLWXozs8DQQz4snN11OJ/view?usp=drive_link)
   - Extract the zip file in the root directory of the project.
   - Copy the folder `trocr_base_v2` to the `weights/` folder.
-(Refer to the Github repository for detailed information and folder structure)
+(Refer to the Github repository link above for detailed information and folder structure)
 
 Dataset
 The dataset can be downloaded or set up any way you want. There are no restrictions on the dataset folder structure.
