@@ -104,7 +104,7 @@ The model training part is divided into two parts primarily:
 - The model is trained for 40 epochs in total.
 - The model is trained on a batch size of 8.
 - For Multiple taining run graphs, refer to the tensorboard logs `tb_logs/fasterrcnn_v2` folder. 
-    - Use the command `tensorboard --logdir tb_logs/fasterrcnn_v2` to view the tensorboard logs in a browser.
+    - Run the command `tensorboard --logdir tb_logs/fasterrcnn_v2` in the root folder to view the tensorboard logs in a browser.
     - **Note:** The checkpoints are not saves as the weights are too large to upload to github.
 #### Model Testing
 - The model is tested on the test set.
@@ -129,7 +129,7 @@ The model training part is divided into two parts primarily:
 - The model is trained for 100 epochs in total.
 - The model is trained on a batch size of 16.
 - For Multiple taining run graphs, refer to the tensorboard logs `tb_logs/trocr_v2_expanded` folder. 
-    - Use the command `tensorboard --logdir tb_logs/trocr_v2_expanded` to view the tensorboard logs in a browser.
+    - Run the command `tensorboard --logdir tb_logs/trocr_v2_expanded` in the root folder to view the tensorboard logs in a browser.
     - **Note:** The checkpoints are not saves as the weights are too large to upload to github.
 #### Model Testing
 - The model is tested on the test set. `dataset/odometer_expanded/test`
@@ -159,10 +159,67 @@ The model training part is divided into two parts primarily:
 - Final CER (Character Error Rate) value: `0.0544`
 - Weights link: [Google Drive](https://drive.google.com/file/d/1-8Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z/view?usp=sharing)
 
-## Environment Setup
-### Using Conda
+## Environment Setup (Linux or Windows)
+## Python Environment Setup
+### Using Conda (Recommended)
 - Create a new conda environment using the command `conda create --name <env_name> python=3.9.18`
 - Activate the environment using the command `conda activate <env_name>`
 - Install the required packages using the command `pip install -r requirements/requirements.txt`
-> if you are using only CPU, then install the `requirements/requirements-cpu.txt` file instead of `requirements/requirements.txt`
-> If you're using a windows system and do not have Visual Studio installed, then install the `requirements/requirements-bkup.txt` file instead of `requirements/requirements.txt`
+> - (**Not Recommended**) If you are using only CPU, then install the `requirements/requirements-cpu.txt` file instead of `requirements/requirements.txt` <br>
+> - (**Not Recommended**) If you're using a windows system and do not have Visual Studio installed, then install the `requirements/requirements-bkup.txt` file instead of `requirements/requirements.txt` **Note:** This will install the CPU version of PyTorch.
+
+### Using System Python & Pip (Linux Only)
+- Install the `virtualenv` package using the command `pip install virtualenv`
+- Create a new virtual environment using the command `virtualenv <env_name>`
+ - Activate the environment using the command `source <env_name>/bin/activate`
+- Install the required packages using the command `pip install -r requirements/requirements.txt`
+> - (**Not Recommended**) If you are using only CPU, then install the `requirements/requirements-cpu.txt` file instead of `requirements/requirements.txt` <br>
+
+## Weights, Dataset setup.
+### Weights
+- Download the weights from the links provided above.
+    - **FasterRCNN** Model weights setup:
+    > - Create a folder named `weights/fasterrcnn` in the root directory of the project. <br>
+    > - Place the downloaded weights file in the `weights/fasterrcnn` folder. <br>
+    > - The folder structure should look like this: <br>
+    > ```bash
+    > weights
+    > ├── fasterrcnn
+    >     └── fasterrcnn-resnet50.pt
+    - **TrOCR** Model weights setup:
+    > - Downlload the zip file from the following link: [Google Drive](https://drive.google.com/file/d/1-8Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z3Z/view?usp=sharing) <br>
+    > - Extract the zip file in the root directory of the project. <br>
+    > Copy the folder `trocr_v2` to the `weights` folder. <br>
+    > - The folder structure should look like this: <br>
+    > ```bash
+    > weights
+    > ├── trocr_base_v2
+    >     ├── config.json
+    >     ├── generation_config.json
+    >     ├── merges.txt
+    >     ├── model.safetensors
+    >     ├── preprocessor_config.json
+    >     ├── special_tokens_map.json
+    >     ├── tokenizer_config.json
+    >     ├── tokenizer.json
+    >     |── vocab.json
+
+### Dataset
+- The dataset can be downloaded or setup any way you want. There are no restrictions on the dataset folder structure.
+
+## Running the code for Inference
+- Please use the `test_predict.py` file to run the inference code.
+- following is the example command to run the inference code:
+```bash
+python test_predict.py --dataset-path dataset/test --image-extensions=".jpg,.png" --odometer-detector-weights weights/fasterrcnn/fasterrcnn-resnet50.pt --ocr-weights weights/trocr_base_v2 --output-path output.xlsx --save-images --save-images-path=save_images --device cuda
+```
+- The above command will run the inference code on the test set and save the results in the `output.xlsx` file.
+- The `--save-images` flag will save the images with the predicted bounding boxes and the predicted text drawn onto the images in the `save_images` folder. (`--save-images-path`  flag needs to be specified for custom folder path.)
+- The `--device` flag can be used to specify the device to run the inference on. The default value is `cuda`.
+- The `--image-extensions` flag can be used to specify the image extensions to look for in the dataset folder. The default value is `".jpg,.png"`.
+- The `--output-path` flag can be used to specify the output file path. The default value is `output.xlsx`.
+- The `--save-images-path` flag can be used to specify the folder path to save the images with the predicted bounding boxes and the predicted text. The default value is `save_images`.
+- The `--odometer-detector-weights` flag can be used to specify the path to the FasterRCNN model weights. The default value is `weights/fasterrcnn/fasterrcnn-resnet50.pt`.
+- The `--ocr-weights` flag can be used to specify the path to the OCR model weights. The default value is `weights/trocr_base_v2`.
+- The `--dataset-path` flag can be used to specify the path to the dataset folder. The default value is `dataset/test`.
+- Use the command `python test_predict.py --help` to view the help message.
