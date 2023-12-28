@@ -1,0 +1,42 @@
+Github Repository Link: [Github](https://github.com/VamsiKrishna1211/Odometer-Recognition-from-Car-Dashboard-Images?tab=readme-ov-file)
+
+Environment Setup (Linux or Windows)
+Python Environment Setup
+Using Conda (Recommended)
+1. Create a new conda environment using the command:
+conda create --name <env_name> python=3.9.18
+
+2. Activate the environment using the command:
+conda activate <env_name>
+
+3. Install the required packages using the command:
+pip install -r requirements/requirements.txt
+(Note: If you are using only CPU or Windows without Visual Studio, use `requirements/requirements-cpu.txt` or `requirements/requirements-bkup.txt` instead of `requirements/requirements.txt`)
+
+
+Weights, Dataset setup.
+Weights
+1. Download the weights from the links provided above.
+- FasterRCNN Model weights setup:
+  - Download the zip file from the following link: [Google Drive](https://drive.google.com/file/d/1f56K0_etroH6bY5bwGfseDLFBahGTHxI/view?usp=drive_link)
+  - Extract the zip file in the root directory of the project.
+  - Create a folder named `weights/fasterrcnn` in the root directory of the project.
+  - Place the downloaded weights (`fasterrcnn-resnet50.pt`) file in the `weights/fasterrcnn` folder.
+(Refer to the Github repository for detailed information and folder structure)
+
+- TrOCR Model weights setup:
+  - Download the zip file from the following link: [Google Drive](https://drive.google.com/file/d/1Dwiiz-qS_bvMuLWXozs8DQQz4snN11OJ/view?usp=drive_link)
+  - Extract the zip file in the root directory of the project.
+  - Copy the folder `trocr_base_v2` to the `weights/` folder.
+(Refer to the Github repository for detailed information and folder structure)
+
+Dataset
+The dataset can be downloaded or set up any way you want. There are no restrictions on the dataset folder structure.
+
+Running the code for Inference
+- Please use the `test_predict.py` file to run the inference code.
+- Refer to the command below for running the code:
+python3 test_predict.py --dataset-path dataset/test --image-extensions=".jpg,.png" --odometer-detector-weights weights/fasterrcnn/fasterrcnn-resnet50.pt --ocr-weights weights/trocr_base_v2 --output-path output.csv --save-images --save-images-path=save_images
+- The above command will run the inference code on the test set and will save the results in the `output.csv` file.
+- The above command will also save the images with the bounding boxes and text drawn in the `save_images` folder.
+- RUn the command `python3 test_predict.py --help` for more information about the command line arguments.
